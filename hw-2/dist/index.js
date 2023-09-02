@@ -51,28 +51,56 @@ function exercise5() {
 }
 
 exercise5(); */
-function exercise6() {
+/* function exercise6() {
+    
     const PI = 3.14;
-    function circleAreaCalculator(r) {
-        const result = PI * r ** 2;
+
+    function circleAreaCalculator (r:number): number {
+        const result:number = PI*r**2;
         return result;
     }
-    const currentRadius = 10;
-    console.log(`\nThe 5th task:\n
+
+    const currentRadius:number = 10;
+
+    console.log(`\nThe 6th task:\n
     The radius of circle is ${circleAreaCalculator(currentRadius)} square units`);
+    
     console.log(`
-    The type of "PI"-variable is "${typeof (PI)}"`);
-    const person = { name: "John", age: 25 };
-    function incrementorOfAge(p) {
-        const { age } = p;
+    The type of "PI"-variable is "${typeof(PI)}"`);
+
+    type TPerson = {name: string; age: number};
+
+    const person: TPerson = {name: "John", age: 25};
+
+    function incrementorOfAge (p:TPerson): TPerson {
+        const {age} = p;
         p.age++;
         return p;
     }
-    const newPerson = incrementorOfAge(person);
+
+    const newPerson: TPerson = incrementorOfAge(person);
+
     console.log(`
-    Person data:`);
+    Person data:`)
     Object.entries(newPerson).forEach(item => {
-        console.log(`\t${item[0]}: ${item[1]}`);
-    });
+        console.log(`\t${item[0]}: ${item[1]}`)
+    })
 }
 exercise6();
+ */
+function exercise7() {
+    function map(arr, fn) {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = fn(arr[i]);
+        }
+        return arr;
+    }
+    const arrayOfNumbers = [0, 1, 2, 3, 4, 5];
+    const toDouble = (a) => {
+        a = a * 2;
+        return a;
+    };
+    console.log(`\nThe 7th task:\n
+    [${map(arrayOfNumbers, toDouble)}]`);
+}
+exercise7();

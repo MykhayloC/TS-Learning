@@ -52,7 +52,7 @@ function exercise5() {
 
 exercise5(); */
 
-function exercise6() {
+/* function exercise6() {
     
     const PI = 3.14;
 
@@ -63,7 +63,7 @@ function exercise6() {
 
     const currentRadius:number = 10;
 
-    console.log(`\nThe 5th task:\n
+    console.log(`\nThe 6th task:\n
     The radius of circle is ${circleAreaCalculator(currentRadius)} square units`);
     
     console.log(`
@@ -88,4 +88,29 @@ function exercise6() {
     })
 }
 exercise6();
+ */
+
+function exercise7() {
+    
+    type TArray = number[];
+    type TTransform = (a: number) => number;
+
+    function map(arr: TArray, fn: TTransform): number[] {
+        for (let i:number = 0; i < arr.length; i++) {
+            arr[i] = fn(arr[i])
+        }
+        return arr;
+    }
+
+    const arrayOfNumbers: TArray = [0, 1, 2, 3, 4, 5];
+    const toDouble: TTransform = (a) => {
+        a = a*2;
+        return a;
+    }
+
+    console.log(`\nThe 7th task:\n
+    [${map(arrayOfNumbers, toDouble)}]`);
+}
+
+exercise7();
 
