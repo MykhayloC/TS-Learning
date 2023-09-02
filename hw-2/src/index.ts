@@ -1,6 +1,6 @@
 // 4th task
 
-function exercise4() {
+/* function exercise4() {
         
     let firstPoint: [number, number]; 
     let secondPoint: [number, number];
@@ -50,5 +50,42 @@ function exercise5() {
     Distance between points is ${distance(firstPoint, secondPoint)} units`)
 }
 
-exercise5();
+exercise5(); */
+
+function exercise6() {
+    
+    const PI = 3.14;
+
+    function circleAreaCalculator (r:number): number {
+        const result:number = PI*r**2;
+        return result;
+    }
+
+    const currentRadius:number = 10;
+
+    console.log(`\nThe 5th task:\n
+    The radius of circle is ${circleAreaCalculator(currentRadius)} square units`);
+    
+    console.log(`
+    The type of "PI"-variable is "${typeof(PI)}"`);
+
+    type TPerson = {name: string; age: number};
+
+    const person: TPerson = {name: "John", age: 25};
+
+    function incrementorOfAge (p:TPerson): TPerson {
+        const {age} = p;
+        p.age++;
+        return p;        
+    }
+
+    const newPerson: TPerson = incrementorOfAge(person);
+
+    console.log(`
+    Person data:`)
+    Object.entries(newPerson).forEach(item => {
+        console.log(`\t${item[0]}: ${item[1]}`)
+    })
+}
+exercise6();
 
