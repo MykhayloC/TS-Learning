@@ -88,19 +88,38 @@ exercise5(); */
 }
 exercise6();
  */
-function exercise7() {
-    function map(arr, fn) {
-        for (let i = 0; i < arr.length; i++) {
-            arr[i] = fn(arr[i]);
+/* function exercise7() {
+    
+    type TArray = number[];
+    type TTransform = (a: number) => number;
+
+    function map(arr: TArray, fn: TTransform): number[] {
+        for (let i:number = 0; i < arr.length; i++) {
+            arr[i] = fn(arr[i])
         }
         return arr;
     }
-    const arrayOfNumbers = [0, 1, 2, 3, 4, 5];
-    const toDouble = (a) => {
-        a = a * 2;
+
+    const arrayOfNumbers: TArray = [0, 1, 2, 3, 4, 5];
+    const toDouble: TTransform = (a) => {
+        a = a*2;
         return a;
-    };
+    }
+
     console.log(`\nThe 7th task:\n
     [${map(arrayOfNumbers, toDouble)}]`);
 }
-exercise7();
+
+exercise7(); */
+function exercise8() {
+    function printGreeting(user) {
+        console.log(`Hello ${user.name}!`);
+    }
+    let product = { name: "headphones", price: 1000 };
+    // TODO: call the function with product as a parameter
+    printGreeting(product);
+    const productOnStck = { name: "phone", price: 10000, isAvailable: true };
+    product = productOnStck;
+    console.log(Object.entries(product));
+}
+exercise8();

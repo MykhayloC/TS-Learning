@@ -90,7 +90,7 @@ exercise5(); */
 exercise6();
  */
 
-function exercise7() {
+/* function exercise7() {
     
     type TArray = number[];
     type TTransform = (a: number) => number;
@@ -112,5 +112,40 @@ function exercise7() {
     [${map(arrayOfNumbers, toDouble)}]`);
 }
 
-exercise7();
+exercise7(); */
 
+
+function exercise8() {
+    
+    type TUser = {name: string};
+    
+    function printGreeting (user: TUser): void {
+        console.log(`Hello ${user.name}!`)
+    }
+
+    type TProduct = {name: string; price: number};
+
+    let product: TProduct = {name: "headphones", price: 1000};
+
+    // TODO: call the function with product as a parameter
+    printGreeting(product);
+    // Output: Hello headphones!
+
+    // TODO: call the function with object literal as a parameter
+    // printGreeting({name: "headphones", price: 1000});
+    // Error: Argument of type '{ name: string; price: number; }' is not assignable to parameter of type 'TUser'
+
+    // TODO: try adding extra property to the object literal - observe the error
+    // product.isAvailable = true;
+    // Error: Property 'isAvailable' does not exist on type 'TProduct'
+
+    type TAvailabilityOfProduct = {name: string; price: number; isAvailable: boolean};
+    const productOnStck: TAvailabilityOfProduct = {name: "phone", price: 10000, isAvailable: true};
+
+    product = productOnStck;
+
+    console.log(Object.entries(product));
+
+}
+
+exercise8();
