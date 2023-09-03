@@ -1,6 +1,6 @@
 // 4th task
 
-/* function exercise4() {
+ function exercise4() {
         
     let firstPoint: [number, number]; 
     let secondPoint: [number, number];
@@ -50,9 +50,9 @@ function exercise5() {
     Distance between points is ${distance(firstPoint, secondPoint)} units`)
 }
 
-exercise5(); */
+exercise5(); 
 
-/* function exercise6() {
+function exercise6() {
     
     const PI = 3.14;
 
@@ -88,9 +88,9 @@ exercise5(); */
     })
 }
 exercise6();
- */
 
-/* function exercise7() {
+
+function exercise7() {
     
     type TArray = number[];
     type TTransform = (a: number) => number;
@@ -112,11 +112,11 @@ exercise6();
     [${map(arrayOfNumbers, toDouble)}]`);
 }
 
-exercise7(); */
+exercise7();
 
 
 function exercise8() {
-    
+    console.log(`\nThe 8th task:\n`);
     type TUser = {name: string};
     
     function printGreeting (user: TUser): void {
@@ -139,13 +139,85 @@ function exercise8() {
     // product.isAvailable = true;
     // Error: Property 'isAvailable' does not exist on type 'TProduct'
 
+    // TODO: fix the error with type assertion
     type TAvailabilityOfProduct = {name: string; price: number; isAvailable: boolean};
     const productOnStck: TAvailabilityOfProduct = {name: "phone", price: 10000, isAvailable: true};
 
     product = productOnStck;
-
-    console.log(Object.entries(product));
-
 }
 
 exercise8();
+
+function exercise9() {
+    console.log(`\nThe 9th task:\n`)
+    class Book {
+        title: string;
+        protected year: number;
+
+        constructor (title: string, year: number) {
+            this.title = title;
+            this.year = year;
+        }
+
+        get getInfo (): string {
+            return `Title: "${this.title}", year of publication: ${this.year}`
+        }
+
+        setYear (year:number) {
+            this.year = year;
+        }
+
+        get getAge ():number {
+            const currentDate = new Date;
+            const currentYear: number = currentDate.getFullYear();
+            return currentYear - this.year;
+        }
+
+        revise (newYear: number) {
+            const currentDate = new Date;
+            const currentYear: number = currentDate.getFullYear();
+            (newYear > currentYear || newYear < this.year) ? 
+            console.log("Input data is not valid!") :
+            this.year = newYear;
+        }
+    }
+
+    const newBoook = new Book ("Some title", 2020);
+    console.log(newBoook.getInfo);
+    
+    newBoook.setYear(2000);
+    console.log(newBoook.getInfo); 
+    
+    console.log(`The age of "${newBoook.title}" is ${newBoook.getAge} years`);
+
+    newBoook.revise(2021);
+    
+    // TODO: add private modifier to the year property
+    // TODO: try to access the year property from outside of the class - observe the error
+    /* console.log(newBoook.year);
+       Property 'year' is private and only accessible within class 'Book' */
+    
+    class Magazine extends Book {
+        month: string;
+        day: number;
+
+        constructor (title: string, year: number, month: string, day: number) {
+            super (title, year);
+            this.month = month;
+            this.day = day;
+        }
+
+        get getInfo(): string {
+            console.log(super.getInfo);
+            return `date of publication: ${this.day} of ${this.month}`
+        }
+    }
+
+    const newMagazine = new Magazine("Title of magazine", 2015, "May", 10);
+    
+    console.log(newMagazine.getInfo);
+
+    console.log(`The age of "${newMagazine.title}" is ${newMagazine.getAge} years`);
+}
+
+exercise9();
