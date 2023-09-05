@@ -84,13 +84,55 @@ function excercise11() {
     console.log(arrayOfStrings.pop?.toUpperCase());
 }
 // TODO: compile and run the code
-excercise11();
+//excercise11();
 // create a generic function which takes an array of items of type T and returns the random item from the array
 function excercise12() {
+    const arrayOfNumbers = [1, 3, 6, 8, 99, 10, 12, 0];
+    const arrayOfStrings = ["My", "name", "", "is", "John"];
+    const user1 = {
+        name: "John",
+        age: 20,
+    };
+    const user2 = {
+        name: "Bob",
+        age: 25,
+    };
+    const user3 = {
+        name: "Tom",
+        age: 15,
+    };
+    const user4 = {
+        name: "Mary",
+        age: 30,
+    };
+    const arrayOfObjects = [user1, user2, user3, user4];
     // TODO: create a function that takes an array of numbers and returns a random number from the array
+    const randomNumber = (array) => {
+        const i = Math.floor(Math.random() * array.length);
+        return array[i];
+    };
     // TODO: create a function that takes an array of strings and returns a random string from the array
+    const randomStrig = (array) => {
+        const i = Math.floor(Math.random() * array.length);
+        return array[i];
+    };
     // TODO: create a function that takes an array of objects and returns a random object from the array
+    const randomObject = (array) => {
+        const i = Math.floor(Math.random() * array.length);
+        return array[i];
+    };
     // TODO: observe the same structure of the functions above, and create a generic function which takes an array of items of type T and returns the random item from the array
+    function randomItem(array) {
+        const i = Math.floor(Math.random() * array.length);
+        return array[i];
+    }
+    //Checking:
+    const genericRandomNumber = randomItem(arrayOfNumbers);
+    const genericRandomString = randomItem(arrayOfStrings);
+    const genericRandomObject = randomItem(arrayOfObjects);
+    console.log(genericRandomNumber);
+    console.log(genericRandomString);
+    console.log(genericRandomObject);
 }
 // TODO: compile and run the code
 //excercise12();
@@ -104,6 +146,7 @@ function excercise13() {
     const userAge = fetchUserAge();
     // TODO: uncomment the following code and add type assertion to fix the error
     // console.log(userAge + 1);
+    console.log(userAge + 1);
 }
 // TODO: compile and run the code
 //excercise13();
