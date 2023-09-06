@@ -171,15 +171,20 @@ function excercise10() {
   // run the code before and after adding type casting to see the difference
   function excercise14() {
     function fetchUserAge() {
-      const responseText = '{"name": "John", "age": "18"}';
+      const responseText = '{"name": "John", "age": "16"}';
   
-      return JSON.parse(responseText).age as number;
+      return +JSON.parse(responseText).age;
     }
     const userAge = fetchUserAge();
 
     // TODO: run the code below and observe the result, explain why it is happening,
+    /* output in console: You are not old enough to drive
+    it happens because operator "===" is an operator of strict camparison and it compares not only values but also types */
+
     // TODO: add type casting to the function above, to fix the error
-    if (userAge > 16) {
+    if (userAge === 16) {
+      console.log("Time to get your driver license");
+    } else if (userAge > 16) {
       console.log("You are old enough to drive");
     } else {
       console.log("You are not old enough to drive");
@@ -187,26 +192,37 @@ function excercise10() {
   }
 
   // TODO: compile and run the code
-  //excercise14();
+  excercise14();
   
   // add type safety to the code which uses any
   function excercise15() {
+
     // TODO: declare a type for user object, which has a name property of type string
-  
+    type TUser = {name: string};
+    
     // TODO: fix the fetchUsers function to return an array of users, not any type
     function fetchUsers() {
+      
       // TODO: add type safety to the data variable, annotate it with the type of users
       const data: unknown = JSON.parse(
         '{"users": [{"name": "John"}, {"name": "Jane"}]}'
       );
-  
+
       // TODO: add check for the data type to contain list of users
-      return data;
+        if ( typeof data === "object" && 
+        data !== null && 
+        "users" in data && 
+        Array.isArray(data.users) && 
+        data.users.length > 0 ) {
+          return data.users as TUser[];
+        } else console.log("List of users doesn't exists")
     }
+
     // TODO: fix typings of the users variable (currently it is of type any)
     const users = fetchUsers();
+
     // TODO: add type safety to the code to print the names of the users to console
-    // users.forEach((user) => console.log(user.name));
+    users ? users.forEach((user) => console.log(user.name)) : console.log("List of users doesn't exists");
   }
   // TODO: compile and run the code
   //excercise15();
