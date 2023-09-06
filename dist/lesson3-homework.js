@@ -13,6 +13,7 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
 // try different target compiler options
 function excercise10() {
     var _Rectangle_width, _Rectangle_height;
+    console.log(`\nexercise 10 output:\n`);
     // TODO: declare a Rectangle class, with width and height properties
     class Rectangle {
         // TODO: add a constructor which takes width and height as parameters
@@ -50,9 +51,10 @@ function excercise10() {
        (property) Rectangle.#width: number */
 }
 // TODO: compile and run the code
-//excercise10();
+excercise10();
 // create a generic Stack class (Stack is a FILO data structure, push and pop methods are used to add and remove items from the top of the stack)
 function excercise11() {
+    console.log(`\nexercise 11 output:\n`);
     // TODO: create a generic Stack class
     class Stack {
         constructor() {
@@ -84,7 +86,7 @@ function excercise11() {
     console.log(arrayOfStrings.pop?.toUpperCase());
 }
 // TODO: compile and run the code
-//excercise11();
+excercise11();
 // create a generic function which takes an array of items of type T and returns the random item from the array
 function excercise12() {
     const arrayOfNumbers = [1, 3, 6, 8, 99, 10, 12, 0];
@@ -106,6 +108,7 @@ function excercise12() {
         age: 30,
     };
     const arrayOfObjects = [user1, user2, user3, user4];
+    console.log(`\nexercise 12 output:\n`);
     // TODO: create a function that takes an array of numbers and returns a random number from the array
     const randomNumber = (array) => {
         const i = Math.floor(Math.random() * array.length);
@@ -135,9 +138,10 @@ function excercise12() {
     console.log(genericRandomObject);
 }
 // TODO: compile and run the code
-//excercise12();
+excercise12();
 // add type assertion to the code
 function excercise13() {
+    console.log(`\nexercise 13 output:\n`);
     // NOTE: do not change this function
     function fetchUserAge() {
         const responseText = '{"name": "John", "age": 18}';
@@ -149,10 +153,11 @@ function excercise13() {
     console.log(userAge + 1);
 }
 // TODO: compile and run the code
-//excercise13();
+excercise13();
 // use type casting to fix the mistake in the code
 // run the code before and after adding type casting to see the difference
 function excercise14() {
+    console.log(`\nexercise 14 output:\n`);
     function fetchUserAge() {
         const responseText = '{"name": "John", "age": "16"}';
         return +JSON.parse(responseText).age;
@@ -176,6 +181,7 @@ function excercise14() {
 excercise14();
 // add type safety to the code which uses any
 function excercise15() {
+    console.log(`\nexercise 15 output:\n`);
     // TODO: fix the fetchUsers function to return an array of users, not any type
     function fetchUsers() {
         // TODO: add type safety to the data variable, annotate it with the type of users
@@ -197,16 +203,26 @@ function excercise15() {
     users ? users.forEach((user) => console.log(user.name)) : console.log("List of users doesn't exists");
 }
 // TODO: compile and run the code
-//excercise15();
+excercise15();
 // use type declarations to fix the comments in the code
 function excercise16() {
     // TODO: add code which uses process.env.NODE_ENV variable,
+    const test = process.env.NODE_ENV;
     // TODO: try to compile and see the error
+    /* Error:
+      Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.ts(2580) */
     // TODO: add type declaration for process.env.NODE_ENV variable in global.d.ts file
+    //file with type declaration was added
     // TODO: try to compile and see the error fixed
+    //the error is fixed
     // TODO: remove global.d.ts file, copile and see the error again
+    /* the file global.d.ts was removed
+      Error:
+      Cannot find name 'process'. Do you need to install type definitions for node? Try `npm i --save-dev @types/node`.ts(2580)
+       */
     // TODO: install type declarations from error message -  @types/node
+    // was installed "npm i --save-dev @types/node"
     // NOTE: For the most part, type declaration packages should always have the same name as the package name on npm, but prefixed with @types/
 }
 // TODO: compile and run the code
-//excercise16();
+excercise16();
