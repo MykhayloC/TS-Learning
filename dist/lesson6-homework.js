@@ -20,7 +20,7 @@ function exercise29() {
     printThingDescription({ name: "widget" });
     printThingDescription({ os: "android" });
 }
-// exercise29();
+exercise29();
 // Create an overloaded function definitions
 function exercise30() {
     function assignWidgetCost(obj) {
@@ -33,7 +33,7 @@ function exercise30() {
     const b = assignWidgetCost({ os: "android" });
     console.log(a, b);
 }
-// exercise30();
+exercise30();
 // Create call signatures
 function exercise31() {
     function handleSaveUserSubmit(firstName, lastName, email) { }
@@ -62,7 +62,7 @@ function exercise31() {
     };
     createAndPrintUser(User);
 }
-// exercise31();
+exercise31();
 // Create an abstract class and concrete classes
 function exercise32() {
     // TODO: make this class abstract
@@ -86,7 +86,7 @@ function exercise32() {
     myDog.eat();
     myDog.makeSound();
 }
-// exercise32();
+exercise32();
 // Create a type for a dictionary with string keys and number values
 function exercise33() {
     // TODO: const dictionary variable of TDictionary type, assign some values (1, 2, 3)
@@ -121,7 +121,7 @@ function exercise33() {
     }
     console.log(getMostFrequentCharacter("She sells seashells by the seashore."));
 }
-// exercise33();
+exercise33();
 // Use index signature and caching
 function exercise34() {
     const studentGrades = {

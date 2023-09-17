@@ -27,7 +27,7 @@ function exercise29() {
   printThingDescription({ name: "widget" });
   printThingDescription({ os: "android" });
 }
-// exercise29();
+exercise29();
 
 // Create an overloaded function definitions
 function exercise30() {
@@ -57,7 +57,7 @@ function exercise30() {
 
   console.log(a, b);
 }
-// exercise30();
+exercise30();
 
 // Create call signatures
 function exercise31() {
@@ -116,7 +116,7 @@ function exercise31() {
 
   createAndPrintUser(User);
 }
-// exercise31();
+exercise31();
 
 // Create an abstract class and concrete classes
 function exercise32() {
@@ -143,7 +143,7 @@ function exercise32() {
   myDog.eat();
   myDog.makeSound();
 }
-// exercise32();
+exercise32();
 
 // Create a type for a dictionary with string keys and number values
 function exercise33() {
@@ -187,7 +187,7 @@ const dictionary: TDictionary */
   }
   console.log(getMostFrequentCharacter("She sells seashells by the seashore."));
 }
-// exercise33();
+exercise33();
 
 // Use index signature and caching
 function exercise34() {
