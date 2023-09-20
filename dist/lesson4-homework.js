@@ -11,8 +11,7 @@ function exercise17() {
             this.age = age;
             this.studentId = studentId;
         }
-        ;
-        // TODO: add method printStudent to print the student info to console    
+        // TODO: add method printStudent to print the student info to console
         printStudent() {
             console.log(`
             Student info:
@@ -20,7 +19,6 @@ function exercise17() {
             student age is ${this.age} years old;
             ID of student is "${this.studentId}"`);
         }
-        ;
     }
     // TODO: create an instance of the class Student
     const newStudent = new Student("John", 18, 1);
@@ -38,17 +36,17 @@ function exercise18() {
     console.log(`\noutput of Exercise18:\n`);
     // TODO: uncomment the code below and update the type definition to fix compile time error
     const widgetWithSize = {
-        name: 'widget',
+        name: "widget",
         width: 10,
         height: 20,
-        color: 'red',
+        color: "red",
         space: 100,
     };
     const desktopWidget = {
-        name: 'widget',
+        name: "widget",
         width: 10,
         height: 20,
-        os: 'windows',
+        os: "windows",
         space: 100,
     };
     // TODO: print the result to console
@@ -72,7 +70,7 @@ function exercise19() {
     }
     console.log(formatCommandLine("  git status  ")); // git status
     console.log(formatCommandLine(["git ", " status "])); // git status
-    console.log(formatCommandLine(false)); // run time error - should be compile time error instead
+    // console.log(formatCommandLine(false)); // run time error - should be compile time error instead
     /* Compile time error: "Argument of type 'boolean' is not assignable to parameter of type 'string | string[]'.ts(2345)" */
 }
 // TODO: compile and run the code
@@ -98,7 +96,7 @@ function exercise20() {
     console.log(rockPaperSizorsVins("scissors", "rock")); // false
     console.log(rockPaperSizorsVins("rock", "scissors")); // true
     // TODO: make sure that the following calls are not allowed
-    console.log(rockPaperSizorsVins("papapaper", "scissors")); // true - no type check
+    // console.log(rockPaperSizorsVins("papapaper", "scissors")); // true - no type check
     /* Compile time error: "Argument of type '"papapaper"' is not assignable to parameter of type 'TMove'.ts(2345)" */
 }
 // TODO: compile and run the code
@@ -163,22 +161,22 @@ exercise21();
 function exercise22() {
     console.log(`\noutput of Exercise22:\n`);
     /*     function printMessagesWithTimeout() {
+          setTimeout(() => {
+          console.log("1");
+    
+          setTimeout(() => {
+            console.log("2");
+          }, 1000);
+    
+          setTimeout(() => {
+            console.log("3");
+    
             setTimeout(() => {
-            console.log("1");
-      
-            setTimeout(() => {
-              console.log("2");
-            }, 1000);
-      
-            setTimeout(() => {
-              console.log("3");
-      
-              setTimeout(() => {
-                console.log("4");
-              }, 1000);
+              console.log("4");
             }, 1000);
           }, 1000);
-        } */
+        }, 1000);
+      } */
     async function printMessagesWithTimeout() {
         await postponement(1000);
         console.log("1");
