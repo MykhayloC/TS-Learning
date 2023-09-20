@@ -177,10 +177,10 @@ const dictionary: TDictionary */
       } else characters[char] = 1;
     }
 
+    // const maxFrequentValue = Math.max(...Object.values(characters));
+
     for (let key in characters) {
-      if (
-        characters[key] === Object.values(characters).sort((a, b) => b - a)[0]
-      )
+      if (characters[key] === Math.max(...Object.values(characters)))
         return key;
     }
     return "";
