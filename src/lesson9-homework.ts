@@ -7,7 +7,7 @@ function exercise47() {
   //   [... in ...]: ...;
   // };
   type TRecord<K extends string | number | symbol, T> = {
-    [K in string | number | symbol]: T;
+    [P in K]: T;
   };
   // TODO: uncomment the following code and check if your mapped type works
   type TPoint = TRecord<"x" | "y" | "z", number>;
